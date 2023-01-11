@@ -1,4 +1,4 @@
-# encoding: cp1251
+# encoding: utf-8
 x = 0
 summ = 0
 6.times do
