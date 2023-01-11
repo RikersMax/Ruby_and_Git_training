@@ -9,4 +9,4 @@ summ = 0
 end
 puts("\nYou got #{x}")
 puts("all sum - #{summ}")
-
+  
