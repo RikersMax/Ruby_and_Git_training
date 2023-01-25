@@ -25,10 +25,7 @@ get '/contact' do
 end
 
 get '/faq' do
-	#@title = 'FAQ'
-	#@mess = 'Ok'
-	construct
-	#erb :message
+   	construct 
 end
 
 post '/' do    	
