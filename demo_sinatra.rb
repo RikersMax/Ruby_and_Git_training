@@ -1,5 +1,6 @@
 # encoding: cp1251
 require 'sinatra'
+require './dice.rb'
 
 def construct
 	@title = 'Under construction'
@@ -7,18 +8,6 @@ def construct
 
 	erb :message   	
 end
-
-	x = 0
-	summ = 0
-	6.times do
-		x = rand(0..6)
-		summ += x
-		#print("\r#{x}")
-		#sleep 1
-	end
-	#puts("\nYou got #{x}")
-	#puts("all sum - #{summ}")
-
 
 get '/max' do
 	@title = 'Thes is my name'
@@ -37,8 +26,7 @@ get '/faq' do
 end
 
 get '/' do
-	erb :index
-
+	erb :message
 end
 
 post '/' do    	
