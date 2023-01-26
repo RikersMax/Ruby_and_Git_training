@@ -8,9 +8,17 @@ def construct
 	erb :message   	
 end
 
-get '/' do
-	erb :index
-end
+	x = 0
+	summ = 0
+	6.times do
+		x = rand(0..6)
+		summ += x
+		#print("\r#{x}")
+		#sleep 1
+	end
+	#puts("\nYou got #{x}")
+	#puts("all sum - #{summ}")
+
 
 get '/max' do
 	@title = 'Thes is my name'
@@ -26,6 +34,11 @@ end
 
 get '/faq' do
    	construct 
+end
+
+get '/' do
+	erb :index
+
 end
 
 post '/' do    	
