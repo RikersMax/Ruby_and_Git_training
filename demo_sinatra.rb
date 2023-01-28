@@ -26,7 +26,7 @@ get '/faq' do
 end
 
 get '/' do
-	erb :message
+	erb :index
 end
 
 post '/' do    	
