@@ -1,7 +1,16 @@
-<var>
-<h2>
-<%= @title %>
-</h2>
-<p><h3><%= @mess %></h3></p>
-<p><%= @mess2 %></p>
-</var>
+<h1><%= @title %></h1>
+<p>
+  <h2><%= @mess %></h2>
+</p>
+<p>
+<form action="http://127.0.0.1:4567/clear">
+  <input style="color: red" type="submit" value="delete list clients" >
+</form>
+</p>
+<p>
+<form action="http://127.0.0.1:4567/">
+  <input style="color: blue" type="submit" value="come beck" >
+</form>
+</p>
+
+<h3><%= @logfile %></h3>
