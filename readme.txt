@@ -1,1 +1,1 @@
-DICE
+Training ruby and git

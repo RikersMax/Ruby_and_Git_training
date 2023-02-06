@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'colorize'
 
-logfile = Dir.entries('./clients').drop(2)
+#logfile = Dir.entries('./clients').drop(2)
+
+get '/test_style' do
+   	erb :test
+end
 
 get '/' do
 	erb :welcome1
@@ -23,7 +27,7 @@ post '/admin' do
 	if @Admin_name == 'admin' && @Admin_pass == 'admin'
 		@title = 'Welcome You admin'
 		@mess = 'choice file'
-		@logfile = File.read('./clients/test.txt')
+		@logfile = File.read('./public/test.html')
 
 		erb :message2
 	else
@@ -34,13 +38,13 @@ post '/admin' do
 end
 
 post '/' do
-  @name = params[:User_name]
+	@name = params[:User_name]
 	@number = params[:Phone]
 	@date = params[:Date_time]
 
   if @name
-	clients_path = File.dirname(__FILE__) + '/clients/'
-	f = File.open(clients_path + "test.txt", 'a')
+	clients_path = File.dirname(__FILE__) + '/public/'
+	f = File.open(clients_path + "test.html", 'a')   	
 	f.puts('Name - ' + "<i style=\"color :green\">#{@name.capitalize}</i>"+ '<br \>')
 	f.puts('Phone - ' + @number + '<br \>')
 	f.puts('Date - ' + @date + '<br \>')
