@@ -16,7 +16,8 @@ get '/admin' do
 end
 
 get '/clear' do
-  File.open('./clients/test.txt', 'w').write('')
+  File.open('./public/test.html', 'w').write('')
+  @logfile = 'clear'
   erb :message2
 end
 
@@ -45,10 +46,10 @@ post '/' do
   if @name
 	clients_path = File.dirname(__FILE__) + '/public/'
 	f = File.open(clients_path + "test.html", 'a')   	
-	f.puts('Name - ' + "<i style=\"color :green\">#{@name.capitalize}</i>"+ '<br \>')
-	f.puts('Phone - ' + @number + '<br \>')
-	f.puts('Date - ' + @date + '<br \>')
-  f.puts('=================<br \>')
+	f.puts("<ul>\n<li>Name - " + "<i style=\"color :green\">#{@name.capitalize}</i></li>"+ '<br />')
+	f.puts('<li>Phone - ' + @number + '</li><br />')
+	f.puts('<li>Date - ' + @date + "<br /></li></ul>")
+  #f.puts('=================<br \>')
 	erb :message1
 	end
 
